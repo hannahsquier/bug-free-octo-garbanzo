@@ -1,7 +1,7 @@
 class Weapon
   attr_reader :name, :damage
   attr_accessor :weapon, :bot
-  
+
   def initialize(name, damage=0)
     @name = name
     raise(ArgumentError) unless @name.is_a?(String)
@@ -16,6 +16,7 @@ class Weapon
 
   def bot=(bot)
     raise ArgumentError unless bot.is_a?(BattleBot) || bot.nil?
+    @bot = bot
   end
 
 end
